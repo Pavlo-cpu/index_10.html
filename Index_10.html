@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Анімовані вкладені блоки</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #fcf4eb;
+      padding: 30px;
+    }
+    .section {
+      background: #fff;
+      border: 3px solid #deb887;
+      border-radius: 18px;
+      padding: 20px;
+      max-width: 900px;
+      margin: 30px auto;
+      box-shadow: 0 0 18px #c2aa84;
+    }
+    h2 {
+      color: #8a5a2b;
+      text-align: center;
+      margin-top: 0;
+    }
+
+    .animated-block {
+      position: relative;
+      overflow: hidden;
+      border-radius: 20px;
+      border: 3px dashed #a67c52;
+      min-height: 200px;
+      margin: 20px auto;
+    }
+
+    .animated-block img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: inherit;
+    }
+
+    .inner {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 50%;
+      height: 50%;
+      border: 2px solid #ffb347;
+      border-radius: 14px;
+      overflow: hidden;
+      animation: pulse 3s infinite ease-in-out;
+    }
+
+    .inner-inner {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      width: 70%;
+      height: 60%;
+      border: 2px dotted #dd7744;
+      border-radius: 12px;
+      overflow: hidden;
+      animation: spin 5s linear infinite;
+    }
+
+    /* Анімації */
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.05);
+      }
+    }
+
+    @keyframes spin {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    /* Marquee з кастомним стилем */
+    .marquee-wrapper {
+      margin-top: 25px;
+      overflow: hidden;
+      background: #ffe4c4;
+      border-radius: 12px;
+      padding: 10px 0;
+    }
+
+    .marquee-wrapper marquee {
+      font-size: 1.2em;
+      color: #6d4c1e;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="section">
+    <h2>Анімовані вкладені блоки</h2>
+
+    <div class="animated-block">
+      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=900&q=80" alt="Outer Image">
+
+      <div class="inner">
+        <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=500&q=80" alt="Inner Image">
+
+        <div class="inner-inner">
+          <img src="https://cdn.pixabay.com/photo/2017/06/20/19/22/fuchs-2424369_1280.jpg" alt="Innermost Image">
+        </div>
+      </div>
+    </div>
+
+    <div class="marquee-wrapper">
+      <marquee behavior="scroll" direction="left" scrollamount="6">
+        🌟 Цей блок має кілька рівнів вкладеності, ефекти руху та анімацію! 🌈 Насолоджуйтесь креативом!
+      </marquee>
+    </div>
+  </div>
+
+</body>
+</html>
